@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Game Deals | GamesGo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="deals-styles.css">
+    <!-- Replace YOUR_ANALYTICS_ID with your actual Google Analytics ID if you want to track visitors -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ANALYTICS_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_ANALYTICS_ID');
+    </script> -->
+</head>
+<body>
+    <div class="deals-container">
+        <header>
+            <h1>GamesGo <span>Special Offers</span></h1>
+            <p class="tagline">Exclusive Deals Just For You</p>
+        </header>
+        
+        <section class="featured-deals">
+            <h2>Today's Hot Deals</h2>
+            
+            <div class="deals-grid">
+                <!-- You can customize these deals with actual ones from GamesGo -->
+                <div class="deal-card">
+                    <div class="discount">-70%</div>
+                    <h3>Game Title 1</h3>
+                    <div class="price">
+                        <span class="original">$59.99</span>
+                        <span class="sale">$17.99</span>
+                    </div>
+                </div>
+                
+                <div class="deal-card">
+                    <div class="discount">-50%</div>
+                    <h3>Game Title 2</h3>
+                    <div class="price">
+                        <span class="original">$49.99</span>
+                        <span class="sale">$24.99</span>
+                    </div>
+                </div>
+                
+                <div class="deal-card">
+                    <div class="discount">-85%</div>
+                    <h3>Game Title 3</h3>
+                    <div class="price">
+                        <span class="original">$39.99</span>
+                        <span class="sale">$5.99</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="redirect-box">
+            <h2>Redirecting you to these deals in <span id="countdown">10</span> seconds...</h2>
+            <div class="loading">
+                <div class="spinner"></div>
+            </div>
+            <p class="redirect-message">Can't wait? <a href="#" id="affiliate-link">Click here</a> to see all deals now.</p>
+        </div>
+    </div>
+
+    <script>
+        // Replace with your actual GamesGo affiliate link
+        const affiliateLink = "https://gamesgo.com/?ref=YOUR_AFFILIATE_ID";
+        
+        // Set the href for the manual link
+        document.getElementById('affiliate-link').href = affiliateLink;
+        
+        // Countdown timer
+        let seconds = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        const countdownTimer = setInterval(function() {
+            seconds--;
+            countdownElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdownTimer);
+                window.location.href = affiliateLink;
+            }
+        }, 1000);
+    </script>
+</body>
+</html> 
